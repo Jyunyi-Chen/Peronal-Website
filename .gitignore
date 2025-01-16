@@ -1,0 +1,6 @@
+.streamlit/secrets.toml
+./form/is_valid_email.md
+
+**/__pycache__/
+**/.DS_Store
+.vscode/

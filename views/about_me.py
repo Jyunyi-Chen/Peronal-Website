@@ -8,7 +8,7 @@ with col1:
     st.image("./assets/profile.png", width=200)
 
 with col2:
-    st.title("Jyun-Yi Chen (Sigma)", anchor=False)
+    st.title("Jyun-Yi Chen", anchor=False)
     st.write(
         "Research Assistant, designing A.I. systems to solve challenges in biomedicine."
     )

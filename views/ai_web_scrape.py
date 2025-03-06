@@ -4,7 +4,6 @@ from views.utils.parse import parse_with_gemini
 from views.utils.scrape import scrape_website, extract_body_content, clean_body_content, split_content
 
 st.title("AI Web Scraper")
-st.write("### (Powered by Gemini)")
 
 url = st.text_input("Enter Website URL")
 

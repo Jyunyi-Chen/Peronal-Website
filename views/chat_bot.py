@@ -3,10 +3,18 @@ import time
 import streamlit as st
 import google.generativeai as genai
 
-genai.configure(api_key=os.getenv("GENAI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5-flash")
-
 st.title("A.I. Chat Bot")
+
+model_options = [
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-lite",
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-8b",
+    "gemini-1.5-pro"
+]
+genai.configure(api_key=os.getenv("GENAI_API_KEY"))
+selected_model = st.selectbox("Choose Gemini Model", options=model_options, index=2)
+model = genai.GenerativeModel(selected_model)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []

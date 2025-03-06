@@ -3,7 +3,9 @@ import time
 import streamlit as st
 import google.generativeai as genai
 
-st.title("A.I. Chat Bot")
+st.set_page_config(layout="wide")
+
+st.title("AI Chat Bot")
 
 model_options = [
     "gemini-2.0-flash",

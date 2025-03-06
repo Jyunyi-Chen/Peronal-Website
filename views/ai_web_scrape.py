@@ -3,7 +3,9 @@ import streamlit as st
 from views.utils.parse import parse_with_gemini
 from views.utils.scrape import scrape_website, extract_body_content, clean_body_content, split_content
 
-st.title("A.I. Web Scraper")
+st.set_page_config(layout="wide")
+
+st.title("AI Web Scraper")
 
 url = st.text_input("Enter Website URL")
 

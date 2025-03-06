@@ -28,11 +28,20 @@ if st.session_state.get("content"):
 
     parse_desc = st.text_area("Describe what you want to parse")
 
+    model_options = [
+        "gemini-2.0-flash",
+        "gemini-2.0-flash-lite",
+        "gemini-1.5-flash",
+        "gemini-1.5-flash-8b",
+        "gemini-1.5-pro"
+    ]
+    selected_model = st.selectbox("Choose Gemini Model", options=model_options, index=0)
+
     if st.button("Parse Content"):
         if parse_desc:
-            st.write("Parsing the content ...")
+            st.write(f"Parsing the content with {selected_model} ...")
 
-            # Parse the content with Ollama
+            # Parse the content with Gemini
             chunks: list[str] = split_content(st.session_state.content)
-            parsed_result = parse_with_gemini(chunks, parse_desc)
+            parsed_result = parse_with_gemini(chunks, parse_desc, selected_model)
             st.write(parsed_result)

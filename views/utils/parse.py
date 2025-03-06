@@ -2,7 +2,6 @@ import os
 import google.generativeai as genai
 
 genai.configure(api_key=os.getenv("GENAI_API_KEY"))
-gemini_model = genai.GenerativeModel("gemini-1.5-flash")
 
 template = (
     "You are tasked with extracting specific information from the following text content: {content}. "
@@ -13,8 +12,8 @@ template = (
     "4. **Direct Data Only:** Your output should contain only the data that is explicitly requested, with no other text."
 )
 
-def parse_with_gemini(chunks, parse_desc):
-    parsed_results = []
+def parse_with_gemini(chunks, parse_desc, model_name: str = "gemini-1.5-flash-8b"):
+    parsed_results, gemini_model = [], genai.GenerativeModel(model_name)
     for i, chunk in enumerate(chunks, start=1):
         prompt_text = template.format(content=chunk, parse_desc=parse_desc)
         response = gemini_model.generate_content(prompt_text)

@@ -3,8 +3,6 @@ import time
 import streamlit as st
 import google.generativeai as genai
 
-st.set_page_config(layout="wide")
-
 st.title("AI Chat Bot")
 
 model_options = [

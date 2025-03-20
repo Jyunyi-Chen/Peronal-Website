@@ -5,9 +5,9 @@ import streamlit as st
 
 from PIL import Image
 
-st.title("PDF to PNG Converter")
+st.title("PDF to PNG Converter", anchor=False)
 
-uploaded_file = st.file_uploader("Upload a PDF file", type=["pdf"])
+uploaded_file = st.file_uploader("", type=["pdf"])
 
 if uploaded_file:
     st.success(f"Uploaded: {uploaded_file.name}")

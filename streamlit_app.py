@@ -22,7 +22,7 @@ project_2_page = st.Page(
 )
 
 project_3_page = st.Page(
-    "views/pdf2png.py",
+    "views/pdf_to_png.py",
     title="PDF to PNG Converter",
     icon=":material/picture_as_pdf:"
 )
